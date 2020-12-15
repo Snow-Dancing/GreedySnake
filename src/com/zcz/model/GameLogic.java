@@ -3,7 +3,6 @@ package com.zcz.model;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Random;
 
 import com.zcz.utils.RandomUtils;
 /**
@@ -33,16 +32,16 @@ public class GameLogic {
 	}
 	
 	public void init() {
-		genNextPoint(2, horizontalGrids - 2, 2, verticalGrids - 2);
+		randomGenNextPoint(2, horizontalGrids - 2, 2, verticalGrids - 2);
 		expandBody();
 		genDefaultNextPoint();
 	}
 	
 	public void genDefaultNextPoint() {
-		genNextPoint(0, horizontalGrids, 0, verticalGrids);
+		randomGenNextPoint(0, horizontalGrids, 0, verticalGrids);
 	}
 	
-	private void genNextPoint(int minWid, int maxWid, int minHei, int maxHei) {
+	private void randomGenNextPoint(int minWid, int maxWid, int minHei, int maxHei) {
 		if (snakeBody.size() == horizontalGrids * verticalGrids) {
 			return;
 		}

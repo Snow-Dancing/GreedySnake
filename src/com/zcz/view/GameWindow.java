@@ -14,6 +14,7 @@ public class GameWindow extends JFrame implements Runnable {
 	GamePanel gp = null;
 	
 	public GameWindow() {
+		super();
 		init();
 	}
 	
@@ -36,8 +37,7 @@ public class GameWindow extends JFrame implements Runnable {
 	}
 	
 	public void run() {
-		Thread t = new Thread(gp);
-		t.start();
+		gp.run();
 	}
 
 }

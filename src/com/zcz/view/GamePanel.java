@@ -36,6 +36,7 @@ public class GamePanel extends JPanel implements Runnable, KeyListener {
 	boolean speedWaitToChange;
 	
 	public GamePanel(int panelWidth, int panelHeight, int horizontalGrids, int verticalGrids) {
+		super();
 		this.moveSpeed = 1;
 		this.speedWaitToChange = false;
 		this.gameIsRunning = false;
@@ -121,7 +122,7 @@ public class GamePanel extends JPanel implements Runnable, KeyListener {
 		}
 		g.setColor(Color.BLACK);
 		g.setFont(new Font("Times New Roman", Font.BOLD, 20));
-		g.drawString("Press space key to exit...", 300, 500);
+		g.drawString("Press any key to exit...", 300, 500);
 	}
 
 	@Override
@@ -169,7 +170,6 @@ public class GamePanel extends JPanel implements Runnable, KeyListener {
 	@Override
 	public void keyTyped(KeyEvent arg0) {
 		if (!gameIsRunning) {
-			// Exit the game if the game is over.
 			System.exit(0);
 		} else {
 			keyPressed(arg0);
